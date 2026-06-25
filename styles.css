@@ -1,0 +1,84 @@
+/* Fondo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: center;
+}
+
+/* Lista de productos */
+main ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de productos */
+main li {
+    background-color: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+main li:hover {
+    transform: scale(1.05);
+}
+
+/* Imágenes */
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Botones */
+button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* Ventana de resumen */
+dialog {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Lista del carrito */
+header ul {
+    list-style: none;
+    padding: 0;
+}
