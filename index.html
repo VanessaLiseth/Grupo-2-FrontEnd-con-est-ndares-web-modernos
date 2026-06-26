@@ -1,128 +1,76 @@
 <!doctype html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mini Tienda online — Encuentra camisas, zapatos, mochilas y más al mejor precio." />
-  <title>Mini Tienda</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <header>
-    <div class="header-content">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
       <h1>Mi Tienda</h1>
 
-      <div class="search-wrapper">
-        <input type="text" id="search-input" placeholder="Buscar productos..." aria-label="Buscar productos" />
-      </div>
+      <div>
+        <button>🛒 Carrito</button> 
 
-      <div class="cart-wrapper">
-        <button id="cart-btn">🛒 Carrito <span id="cart-count">0</span></button>
-      </div>
-    </div>
-  </header>
+        <div> 
+          <h2>Carrito</h2>
 
-  <!-- Overlay del carrito -->
-  <div class="cart-overlay" id="cart-overlay"></div>
+          <ul>
+            <li>Camiseta - $12.00</li>
+            <li>Zapatos - $35.00</li>
+          </ul>
 
-  <!-- Panel lateral del carrito -->
-  <aside id="cart-panel">
-    <div class="cart-header">
-      <h2>Tu Carrito</h2>
-      <button class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar carrito">✕</button>
-    </div>
-
-    <ul id="cart-items">
-      <!-- Items dinámicos se agregan aquí via JS -->
-    </ul>
-
-    <div class="cart-footer">
-      <div class="cart-total-row">
-        <span class="cart-total-label">Total:</span>
-        <span id="cart-total">$0.00</span>
-      </div>
-      <button id="buy-btn" disabled>Comprar</button>
-    </div>
-  </aside>
-
-  <main>
-    <h2>Productos</h2>
-    <p class="products-subtitle">Explora nuestra colección y encuentra lo que necesitas</p>
-
-    <ul class="products-grid">
-      <li class="product-card" data-name="Camisa" data-price="12.00">
-        <div class="product-img-wrapper">
-          <img src="imagenes/camisa.jpg" alt="Camisa casual de algodón" />
+          <button>Comprar</button>
         </div>
-        <div class="product-info">
+      </div>
+    </header>
+
+    <main>
+      <h2>Productos</h2>
+
+      <ul>
+        <li>
+          <img src="imagenes/camisa.jpg" alt="Camisa" />
+
           <h3>Camisa</h3>
-          <p class="product-price">$12.00</p>
-          <button class="add-to-cart-btn">
-            <span class="btn-icon">🛒</span> Agregar al carrito
-          </button>
-        </div>
-      </li>
 
-      <li class="product-card" data-name="Zapatos" data-price="35.00">
-        <div class="product-img-wrapper">
-          <img src="imagenes/zapatos.webp" alt="Zapatos deportivos" />
-        </div>
-        <div class="product-info">
+          <p>Precio: $12.00</p>
+
+          <button>Agregar al carrito</button>
+        </li>
+
+        <li>
+          <img src="imagenes/zapatos.webp" alt="Zapatos" />
+
           <h3>Zapatos</h3>
-          <p class="product-price">$35.00</p>
-          <button class="add-to-cart-btn">
-            <span class="btn-icon">🛒</span> Agregar al carrito
-          </button>
-        </div>
-      </li>
 
-      <li class="product-card" data-name="Mochila" data-price="20.00">
-        <div class="product-img-wrapper">
-          <img src="imagenes/mochila.webp" alt="Mochila escolar resistente" />
-        </div>
-        <div class="product-info">
+          <p>Precio: $35.00</p>
+
+          <button>Agregar al carrito</button>
+        </li>
+
+        <li>
+          <img src="imagenes/mochila.webp" alt="Mochila" />
+
           <h3>Mochila</h3>
-          <p class="product-price">$20.00</p>
-          <button class="add-to-cart-btn">
-            <span class="btn-icon">🛒</span> Agregar al carrito
-          </button>
-          <button id="victor" class="add-to-cart-btn ">Gonorrea</button>
-        </div>
-      </li>
 
-      <li class="no-results" id="no-results">
-        <span class="no-results-icon">🔍</span>
-        No se encontraron productos
-      </li>
-    </ul>
-  </main>
+          <p>Precio: $20.00</p>
 
-  <!-- Dialog: Resumen de compra -->
-  <dialog id="purchase-dialog">
-    <div class="dialog-header">
-      <h2>Resumen de Compra</h2>
-    </div>
-    <div class="dialog-body">
-      <ol id="dialog-items">
-        <!-- Items dinámicos via JS -->
+          <button>Agregar al carrito</button>
+        </li>
+      </ul>
+    </main>
+    <dialog open>
+      <h2>Resumen de compra</h2>
+
+      <ol>
+        <li>Camiseta</li>
+        <li>Zapatos</li>
       </ol>
-      <div class="dialog-total">
-        <span>Total:</span>
-        <span class="dialog-total-value" id="dialog-total-value">$0.00</span>
-      </div>
-    </div>
-    <div class="dialog-footer">
-      <button id="dialog-close-btn">Cancelar</button>
-      <button id="dialog-confirm-btn">Confirmar Compra</button>
-    </div>
-  </dialog>
 
-  <!-- Contenedor de notificaciones toast -->
-  <div class="toast-container" id="toast-container"></div>
-
-  <script src="app.js"></script>
-</body>
-
+      <button>Cerrar</button>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
 </html>
